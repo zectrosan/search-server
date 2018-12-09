@@ -1,0 +1,24 @@
+{
+  "name": "@xtendsearch/search-server",
+  "version": "0.0.1",
+  "description": "XtendSearch Search Server",
+  "main": "bin/www",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zectrosan/search-server.git"
+  },
+  "author": "Amitosh Swain Mahapatra <amitosh.swain@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zectrosan/search-server/issues"
+  },
+  "homepage": "https://github.com/zectrosan/search-server#readme",
+  "dependencies": {
+    "elasticsearch": "^15.2.0",
+    "express": "^4.16.4"
+  }
+}
