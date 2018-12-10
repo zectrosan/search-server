@@ -1,4 +1,5 @@
 module.exports = {
+    environment: process.env.NODE_ENV || 'dev',
     es: {
         hosts: (process.env.ES_HOSTS || 'http://localhost:9200').split(',')
     },

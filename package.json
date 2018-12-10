@@ -4,8 +4,9 @@
   "description": "XtendSearch Search Server",
   "main": "bin/www",
   "scripts": {
+    "dev": "node-dev bin/www",
     "test": "npm test",
-    "start": "node server.js"
+    "start": "node bin/www"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,10 @@
   "homepage": "https://github.com/zectrosan/search-server#readme",
   "dependencies": {
     "elasticsearch": "^15.2.0",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "node-dev": "^3.1.3"
   }
 }

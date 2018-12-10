@@ -1,6 +1,9 @@
 const config = require('./config');
 const express = require('express');
+const morgan = require('morgan');
 const elasticsearch = require('elasticsearch');
+
+const apiV1 = require('./api/v1');
 
 const app = express();
 
@@ -8,26 +11,9 @@ const client = elasticsearch.Client({
   hosts: config.es.hosts
 });
 
+app.use(morgan(config.environment == 'production' ? 'combined' : 'dev'));
 app.use(express.json());
 
-app.post('/search', (req, res, next) => {
-  client
-    .search({
-      index: 'search',
-      ...req.body
-    })
-    .then(res.json)
-    .catch(next);
-});
-
-app.post('/index', (req, res, next) => {
-  client
-    .index({
-      index: 'search',
-      ...req.body
-    })
-    .then(res.json)
-    .catch(next);
-});
+app.use('/api/v1', apiV1);
 
 module.exports = app;
